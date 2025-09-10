@@ -1,4 +1,3 @@
-<!-- /index.html (SUBSTITUIR TODO O ARQUIVO) -->
 <!DOCTYPE html>
 <html lang="pt-BR">
   <head>
@@ -6,6 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Bitcoin Facil — Início</title>
     <link rel="stylesheet" href="css/style.css" />
+
+    <!-- Swiper CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+    />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -16,7 +22,6 @@
   <body class="theme-dark">
     <div class="bg-blobs" aria-hidden="true">
       <span class="blob b1"></span><span class="blob b2"></span>
-      <!-- <span class="blob b3"></span> -->
     </div>
 
     <header class="site-header glass">
@@ -28,6 +33,11 @@
         />
         <span class="brand-name">Bitcoin Facil</span>
       </a>
+
+      <button class="menu-toggle">
+        <ion-icon name="menu-outline"></ion-icon>
+      </button>
+
       <nav class="site-nav">
         <a class="nav-link active" href="index.html">Início</a>
         <a class="nav-link" href="sobre.html">Sobre</a>
@@ -38,7 +48,7 @@
     </header>
 
     <main>
-      <!-- Hero com imagem de fundo orgânica (definida no CSS: ../images/produto.png) -->
+      <!-- Hero com imagem de fundo orgânica -->
       <section class="hero">
         <div class="hero-inner">
           <div class="hero-badge">open source • self-custody • segurança</div>
@@ -64,17 +74,16 @@
 
       <section class="section">
         <div class="section-head">
-          <h2 class="section-title">Como Funciona</h2>
-        </div>
-      </section>
-
-      <!-- Lista dinâmica com TODOS os produtos do produtos-data.js -->
-      <section class="section">
-        <div class="section-head">
           <h2 class="section-title">Nossos Produtos</h2>
           <p class="section-sub">Escolha o seu caminho para a autocustódia.</p>
         </div>
-        <div id="home-products" class="grid cards-3"></div>
+        <div id="home-products"></div>
+
+        <div class="ver-mais-wrapper">
+          <a class="btn btn-ghost btn-ver-mais" href="produtos.html"
+            >Ver Mais</a
+          >
+        </div>
       </section>
 
       <section class="section section-cta">
@@ -88,10 +97,69 @@
       </section>
     </main>
 
-    <footer class="site-footer">
+    <!-- <footer class="site-footer">
       <p class="muted">© Bitcoin Facil • Open source de ponta a ponta.</p>
+    </footer> -->
+
+    <footer class="site-footer">
+      <div class="footer-content">
+        <p class="footer-text">
+          © 2024 Bitcoin Facil • Open source de ponta a ponta.
+        </p>
+
+        <div class="footer-social">
+          <a
+            href="https://wa.me/5531995535520"
+            class="social-link"
+            target="_blank"
+            rel="noopener"
+            aria-label="WhatsApp"
+          >
+            <ion-icon name="logo-whatsapp"></ion-icon>
+          </a>
+          <a
+            href="https://t.me/Cleitondickson"
+            class="social-link"
+            target="_blank"
+            rel="noopener"
+            aria-label="Telegram"
+          >
+            <ion-icon name="paper-plane-outline"></ion-icon>
+          </a>
+          <a
+            href="https://www.youtube.com/@BitcoinFacilBR"
+            class="social-link"
+            target="_blank"
+            rel="noopener"
+            aria-label="YouTube"
+          >
+            <ion-icon name="logo-youtube"></ion-icon>
+          </a>
+          <a
+            href="https://x.com/btcfacilbr"
+            class="social-link"
+            target="_blank"
+            rel="noopener"
+            aria-label="Twitter"
+          >
+            <ion-icon name="logo-twitter"></ion-icon>
+          </a>
+        </div>
+      </div>
     </footer>
 
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+
+    <script src="js/swiper-init.js"></script>
     <script src="js/produtos-data.js"></script>
     <script src="js/render-home.js"></script>
     <script src="js/cupom.js"></script>
