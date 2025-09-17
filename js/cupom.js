@@ -2,12 +2,14 @@
 (function () {
   function applyCupomToInputs(c) {
     if (!c) return;
-    document.querySelectorAll("input[name='cupom']").forEach(input => { input.value = c; });
+    document.querySelectorAll("input[name='cupom']").forEach((input) => {
+      input.value = c;
+    });
   }
 
   function addCupomToInternalLinks(c) {
     if (!c) return;
-    document.querySelectorAll("a").forEach(link => {
+    document.querySelectorAll("a").forEach((link) => {
       let href = link.getAttribute("href");
       if (!href) return;
       if (href.startsWith("http")) return;
@@ -29,3 +31,8 @@
     addCupomToInternalLinks(cupom);
   });
 })();
+
+//funcionalidade nav bar mobile
+document.querySelector(".menu-toggle").addEventListener("click", () => {
+  document.querySelector(".site-nav").classList.toggle("open");
+});
