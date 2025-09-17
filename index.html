@@ -33,11 +33,6 @@
         />
         <span class="brand-name">Bitcoin Facil</span>
       </a>
-
-      <button class="menu-toggle">
-        <ion-icon name="menu-outline"></ion-icon>
-      </button>
-
       <nav class="site-nav">
         <a class="nav-link active" href="index.html">Início</a>
         <a class="nav-link" href="sobre.html">Sobre</a>
@@ -72,17 +67,74 @@
         <img class="hero-image" src="images/bitcoin.png" alt="" />
       </section>
 
+      <!-- Como Funciona -->
+      <section class="how-it-works">
+        <div class="section-head">
+          <h2 class="section-title">Como Funciona</h2>
+          <p class="section-sub">
+            Processo simples para garantir sua liberdade financeira.
+          </p>
+        </div>
+
+        <div class="steps-grid">
+          <div class="step-card">
+            <div class="step-number">1</div>
+            <div class="step-icon">
+              <ion-icon name="bag-outline"></ion-icon>
+            </div>
+            <h3 class="step-title">Escolha seu Kit</h3>
+            <p class="step-desc">
+              Navegue pelos nossos produtos e encontre a solução perfeita para
+              suas necessidades de autocustódia.
+            </p>
+          </div>
+
+          <div class="step-card">
+            <div class="step-number">2</div>
+            <div class="step-icon">
+              <ion-icon name="color-palette-outline"></ion-icon>
+            </div>
+            <h3 class="step-title">Personalize</h3>
+            <p class="step-desc">
+              Escolha cores, acessórios e opções de personalização para criar
+              seu hardware wallet único.
+            </p>
+          </div>
+
+          <div class="step-card">
+            <div class="step-number">3</div>
+            <div class="step-icon">
+              <ion-icon name="chatbubbles-outline"></ion-icon>
+            </div>
+            <h3 class="step-title">Finalize no WhatsApp</h3>
+            <p class="step-desc">
+              Complete sua compra através do WhatsApp ou Telegram com
+              atendimento personalizado.
+            </p>
+          </div>
+
+          <div class="step-card">
+            <div class="step-number">4</div>
+            <div class="step-icon">
+              <ion-icon name="shield-checkmark-outline"></ion-icon>
+            </div>
+            <h3 class="step-title">Receba com Segurança</h3>
+            <p class="step-desc">
+              Seu hardware wallet chegará lacrado e pronto para garantir sua
+              soberania financeira.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Carrossel de produtos com Swiper -->
       <section class="section">
         <div class="section-head">
           <h2 class="section-title">Nossos Produtos</h2>
           <p class="section-sub">Escolha o seu caminho para a autocustódia.</p>
         </div>
-        <div id="home-products"></div>
-
-        <div class="ver-mais-wrapper">
-          <a class="btn btn-ghost btn-ver-mais" href="produtos.html"
-            >Ver Mais</a
-          >
+        <div id="home-products">
+          <!-- O carrossel será gerado aqui pelo JavaScript -->
         </div>
       </section>
 
@@ -90,16 +142,13 @@
         <div class="cta glass soft-shadow">
           <h3>Pronto para assumir o controle?</h3>
           <p>
-            Monte seu pedido, escolha cores e finalize por WhatsApp ou Telegram.
+            Monte seu pedido, escolha cores e acessórios, e finalize por
+            WhatsApp ou Telegram com atendimento personalizado.
           </p>
           <a class="btn btn-accent" href="produtos.html">Começar agora</a>
         </div>
       </section>
     </main>
-
-    <!-- <footer class="site-footer">
-      <p class="muted">© Bitcoin Facil • Open source de ponta a ponta.</p>
-    </footer> -->
 
     <footer class="site-footer">
       <div class="footer-content">
@@ -109,7 +158,7 @@
 
         <div class="footer-social">
           <a
-            href="https://wa.me/5531995535520"
+            href="https://wa.me/seunumero"
             class="social-link"
             target="_blank"
             rel="noopener"
@@ -118,7 +167,7 @@
             <ion-icon name="logo-whatsapp"></ion-icon>
           </a>
           <a
-            href="https://t.me/Cleitondickson"
+            href="https://t.me/seucanal"
             class="social-link"
             target="_blank"
             rel="noopener"
@@ -127,7 +176,7 @@
             <ion-icon name="paper-plane-outline"></ion-icon>
           </a>
           <a
-            href="https://www.youtube.com/@BitcoinFacilBR"
+            href="https://youtube.com/@seucanal"
             class="social-link"
             target="_blank"
             rel="noopener"
@@ -136,7 +185,7 @@
             <ion-icon name="logo-youtube"></ion-icon>
           </a>
           <a
-            href="https://x.com/btcfacilbr"
+            href="https://twitter.com/seuusuario"
             class="social-link"
             target="_blank"
             rel="noopener"
@@ -148,7 +197,8 @@
       </div>
     </footer>
 
-    <!-- Swiper JS -->
+    <!-- Scripts -->
+    <script src="js/produtos-data.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
     <script
       type="module"
@@ -159,9 +209,8 @@
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
     ></script>
 
-    <script src="js/swiper-init.js"></script>
-    <script src="js/produtos-data.js"></script>
     <script src="js/render-home.js"></script>
+    <script src="js/swiper-init.js"></script>
     <script src="js/cupom.js"></script>
   </body>
 </html>
