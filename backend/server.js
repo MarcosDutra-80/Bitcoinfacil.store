@@ -28,10 +28,10 @@ const SUPERFRETE_TOKEN = process.env.SUPERFRETE_TOKEN;
 
 const __dirname = path.dirname(new URL(import.meta.url).pathname);
 
-app.use(express.static(path.join(__dirname, "frontend")));
+app.use(express.static(path.join(__dirname, "../frontend")));
 
 app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "frontend", "index.html"));
+  res.sendFile(path.join(__dirname, "../frontend", "index.html"));
 });
 
 // Rota para calcular frete
