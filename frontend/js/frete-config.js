@@ -38,7 +38,7 @@ window.FreteAPI = {
       const backendUrl =
         window.location.hostname === "localhost"
           ? "http://localhost:3000"
-          : "https://store.bitcoinfacil.net";
+          : "https://bitcoinfacil-store.onrender.com"; //URL DO DOMINIO
       const response = await fetch(`${backendUrl}/api/frete`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
