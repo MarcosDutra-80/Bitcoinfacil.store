@@ -30,16 +30,49 @@ window.PRODUTOS = [
       length: 12, // cm
     },
     detalhesHTML: `
-      <h4>Documentação do Dispositivo JADE DIY</h4>
-      <p><strong>Introdução:</strong> dispositivo seguro e transparente.</p>
-      <p><strong>Por que hardware open source?</strong> <a href="https://plebs.substack.com/p/hard-wallets-seguras" target="_blank">Artigo</a></p>
-      <p><strong>Conectividade:</strong> GreenWallet • SideSwap • Sparrow • Electrum</p>
-      <p><strong>Atualizações:</strong> via navegador / binários Sandmann / compilação GitHub</p>
-      <p><strong>Bateria:</strong> interna (indicação limitada)</p>
-      <p><strong>Segurança:</strong> Secure-element virtual Oracle</p>
-      <p>Tutorial: <a href="https://www.youtube.com/watch?v=k-maFZiKSw4" target="_blank">YouTube</a></p>
-      <p><a href="https://docs.google.com/document/d/1Bf8O-R478woq8z7Z8DnN9XlfGf9B3GT8rn0qgJiAUHM/edit?usp=sharing" target="_blank">Documentação completa</a></p>
-    `,
+    
+        <h4 class="card-title">Documentação do Dispositivo JADE DIY</h4>
+        <ul class="info-list">
+          <p><strong>Introdução:</strong> dispositivo seguro e transparente.</p>
+          <li>
+           Por que hardware open source?
+            <a
+              class="link"
+              href="https://plebs.substack.com/p/hard-wallets-seguras"
+              target="_blank"
+              >Artigo</a
+            >
+          </li>
+          <li>
+            <strong>Conectividade:</strong> GreenWallet • SideSwap • Sparrow •
+            Electrum
+          </li>
+          <li>
+            <strong>Atualizações:</strong> via navegador / binários Sandmann /
+            compilação GitHub
+          </li>
+          <li><strong>Bateria:</strong> interna (indicação limitada)</li>
+          <li><strong>Segurança:</strong> Secure-element virtual Oracle</li>
+          <li>
+            Tutorial:
+            <a
+              class="link"
+              href="https://www.youtube.com/watch?v=k-maFZiKSw4"
+              target="_blank"
+              >YouTube</a
+            >
+          </li>
+          <li>
+            <a
+              class="link"
+              href="https://docs.google.com/document/d/1Bf8O-R478woq8z7Z8DnN9XlfGf9B3GT8rn0qgJiAUHM/edit?usp=sharing"
+              target="_blank"
+              >Documentação completa</a
+            >
+          </li>
+        </ul>
+ 
+      `,
     options: [
       {
         type: "colorPair",
@@ -78,14 +111,16 @@ window.PRODUTOS = [
     },
     detalhesHTML: `
       <h4>Detalhes Técnicos</h4>
-      <p>• Projeto 100% open-source — código, esquemas e guias em
-         <a href="https://github.com/polhenarejos/pico-fido" target="_blank">github.com/polhenarejos/pico-fido</a>.</p>
-      <p>• Compatível: Google, Proton Mail, Microsoft Outlook, GitHub, X/Twitter…</p>
-      <p>• FIDO2 dispensa SMS/app 2FA; chaves ficam no dispositivo.</p>
-      <p>• USB-C fêmea; alimentação do host (cabo não incluído).</p>
-      <p>• Conectividade: Android • Linux • Windows (iOS/macOS não testados).</p>
-      <p>• <a href="https://docs.google.com/document/d/1JIE_6lNlFsk-TwPceDngePEg8G9fe3FKINjHCGeSUgg/edit?usp=sharing" target="_blank">Documentação completa</a>.</p>
-    `,
+        <ul class="info-list">
+          <li> Projeto 100% open-source — código, esquemas e guias em
+              <a class="link" href="https://github.com/polhenarejos/pico-fido" target="_blank">github.com/polhenarejos/pico-fido</a>.</li>
+          <li> Compatível: Google, Proton Mail, Microsoft Outlook, GitHub, X/Twitter…</li>
+          <li> FIDO2 dispensa SMS/app 2FA; chaves ficam no dispositivo.</li>
+          <li> USB-C fêmea; alimentação do host (cabo não incluído).</li>
+          <li> Conectividade: Android • Linux • Windows (iOS/macOS não testados).</li>
+          <li> <a class="link" href="https://docs.google.com/document/d/1JIE_6lNlFsk-TwPceDngePEg8G9fe3FKINjHCGeSUgg/edit?usp=sharing" target="_blank">Documentação completa</a>.</li>
+        </ul>
+     `,
     options: [
       {
         type: "colorPair",
@@ -116,11 +151,40 @@ window.PRODUTOS = [
       length: 10,
     },
     detalhesHTML: `
-      <p>• ~55 KH/s (info do projeto) • Stratum / pools self-custody.<br>
-      • Firmware: <a href="https://github.com/BitMaker-hub/NerdMiner_v2" target="_blank">GitHub</a>.<br>
-      • USB-C 5 V • Tutorial: <a href="https://www.youtube.com/watch?v=Cq0y1034oq8" target="_blank">YouTube</a>.</p>
-      <p><strong>TTGO T-Display:</strong> <a href="https://pt.aliexpress.com/item/1005005970553639.html?channel=twinner" target="_blank">Comprar no AliExpress</a></p>
-      <p><em>APENAS CASE — sem bateria.</em></p>
+      <ul class="info-list">
+          <li>
+            ~55 KH/s (info do projeto) • Stratum / pools self-custody.<br />
+          </li>
+
+          <li>
+            Firmware:
+            <a
+              class="link"
+              href="https://github.com/BitMaker-hub/NerdMiner_v2"
+              target="_blank"
+              >GitHub</a
+            >.<br />
+          </li>
+          <li>
+            USB-C 5 V • Tutorial:
+            <a
+              class="link"
+              href="https://www.youtube.com/watch?v=Cq0y1034oq8"
+              target="_blank"
+              >YouTube</a
+            >.
+          </li>
+          <li>
+            <strong>TTGO T-Display:</strong>
+            <a
+              class="link"
+              href="https://pt.aliexpress.com/item/1005005970553639.html?channel=twinner"
+              target="_blank"
+              >Comprar no AliExpress</a
+            >
+          </li>
+          <li><em>APENAS CASE — sem bateria.</em></li>
+        </ul>
     `,
     options: [
       {
@@ -155,12 +219,15 @@ window.PRODUTOS = [
       length: 8,
     },
     detalhesHTML: `
-      <p><strong>Como usar:</strong> sobre base firme, perfure cada letra (estilete, agulha grossa ou punção).</p>
-      <p><strong>Utilidade:</strong> gravação física, offline e resistente ao fogo/água das 24 palavras da seed BIP-39.</p>
-      <p>Tutorial:
-         <a href="https://stackbit.me/tutorial-stackbit-1248/" target="_blank">Vídeo oficial (Stackbit)</a></p>
-      <p style="font-size:.9rem;color:#ccc">
-        Design original por <a href="https://twitter.com/valandro" target="_blank">@Valandro</a>.
+     <ul class="info-list">
+       <li><strong>Como usar:</strong> sobre base firme, perfure cada letra (estilete, agulha grossa ou punção).</li>
+       <li><strong>Utilidade:</strong> gravação física, offline e resistente ao fogo/água das 24 palavras da seed BIP-39.</li>
+       <li>Tutorial:
+           <a class="link" href="https://stackbit.me/tutorial-stackbit-1248/" target="_blank">Vídeo oficial (Stackbit)</a></li>
+        <li>
+            <em>Design original por <a class="link" href="https://twitter.com/valandro" target="_blank">@Valandro</a>.</em>
+        </li>
+     </ul>
       `,
     options: [{ type: "seedPack" }],
     allowAddOnSeed: false,
@@ -190,14 +257,39 @@ window.PRODUTOS = [
       length: 15,
     },
     detalhesHTML: `
-      <h4>Detalhes Técnicos</h4>
-      <p>Inclui bateria e box de proteção (placa não inclusa).</p>
-      <p>Tutorial: <a href="https://www.youtube.com/watch?v=V48RpmuZEwI" target="_blank">YouTube</a></p>
-      <p>Placa referência Yahboom:
-         <a href="https://de.aliexpress.com/item/1005005585064305.html" target="_blank">AliExpress</a></p>
-      <p>Documentação:
-         <a href="https://docs.google.com/document/d/1s70HUmdX3XX08GbINxEAay5eK_D3c4RLReKuautZYB4/edit?usp=sharing" target="_blank">Google Docs</a></p>
-      <p>Encomenda completa: ~25 dias • R$ 775 + R$ 89 (box)</p>
+   <h4 class="card-title">Detalhes Técnicos</h4>
+        <ul class="info-list">
+          <li>Inclui bateria e box de proteção (placa não inclusa).</li>
+          <li>
+            Tutorial:
+            <a
+              class="link"
+              href="https://www.youtube.com/watch?v=V48RpmuZEwI"
+              target="_blank"
+              >YouTube</a
+            >
+          </li>
+          <li>
+            Placa referência Yahboom:
+            <a
+              class="link"
+              href="https://de.aliexpress.com/item/1005005585064305.html"
+              target="_blank"
+              >AliExpress</a
+            >
+          </li>
+          <li>
+            Documentação:
+            <a
+              class="link"
+              href="https://docs.google.com/document/d/1s70HUmdX3XX08GbINxEAay5eK_D3c4RLReKuautZYB4/edit?usp=sharing"
+              target="_blank"
+              >Google Docs</a
+            >
+          </li>
+
+          <li>Encomenda completa: ~25 dias • R$ 775 + R$ 89 (box)</li>
+        </ul>
     `,
     options: [
       {
@@ -236,8 +328,15 @@ window.PRODUTOS = [
       width: 8,
       length: 12,
     },
-    detalhesHTML: `
-      <p>Impressão 3D em PLA/ASA sob encomenda. Não inclui eletrônica.</p>
+    detalhesHTML: `<ul class="info-list">
+      <li>
+        
+        Impressão 3D em PLA/ASA sob encomenda.
+      </li><li>
+        
+         Não inclui eletrônica.
+      </li>
+    </ul>
     `,
     options: [
       {
@@ -278,11 +377,13 @@ window.PRODUTOS = [
       length: 15,
     },
     detalhesHTML: `
-      <h4>Backup físico resistente para seed phrase</h4>
-      <p>Par de placas em aço inoxidável 316L, acompanha caneta especial.</p>
-      <p>Formato BIP-39 para armazenamento seguro de palavras-semente.</p>
-      <p>Resistente à corrosão, altas temperaturas, fogo, água e impactos.</p>
-      <p>Ideal para usuários de Bitcoin que buscam máxima proteção física para suas seeds.</p>
+      <h4 class= "card-title">Backup físico resistente para seed phrase</h4>
+     <ul class="info-list">
+       <li>Par de placas em aço inoxidável 316L, acompanha caneta especial.</li>
+       <li>Formato BIP-39 para armazenamento seguro de palavras-semente.</li>
+       <li>Resistente à corrosão, altas temperaturas, fogo, água e impactos.</li>
+       <li>Ideal para usuários de Bitcoin que buscam máxima proteção física para suas seeds.</li>
+     </ul>
     `,
     allowAddOnSeed: false,
     buyButtonText: "Comprar Grade Binária Inox",

@@ -21,34 +21,56 @@
       .join("");
   }
 
-  /* Galeria por produto */
+  /* Galeria por produto com Swiper */
   function buildGallery(prod) {
-    const g = el("div", { class: "galeria" });
+    const container = el("div", { class: "swiper galeria-swiper" });
+    const wrapper = el("div", { class: "swiper-wrapper" });
+
     prod.imagens.forEach((src, i) => {
+      const slide = el("div", { class: "swiper-slide" });
       const img = el("img", {
         src,
         alt: `${prod.nome} ${i + 1}`,
         loading: "lazy",
         decoding: "async",
       });
+
       img.addEventListener("click", () => {
         if (window.lightbox?.open) {
           lightbox.open(prod.imagens, i);
         }
       });
-      g.appendChild(img);
+
+      slide.appendChild(img);
+      wrapper.appendChild(slide);
     });
-    return g;
+
+    container.appendChild(wrapper);
+
+    // setas (desktop)
+    container.appendChild(el("div", { class: "swiper-button-prev" }));
+    container.appendChild(el("div", { class: "swiper-button-next" }));
+
+    // paginação (mobile)
+    container.appendChild(el("div", { class: "swiper-pagination" }));
+
+    return container;
   }
 
   /* Caixa de descrição */
   function buildDescBox(prod) {
-    const box = el("div", { class: "desc-box" });
-    box.appendChild(el("h3", {}, `Informações sobre ${prod.nome}`));
+    const box = el("div", { class: "desc-box info-card" });
+    box.appendChild(
+      el("h3", { class: "card-title" }, `Informações sobre ${prod.nome}`)
+    );
     box.appendChild(el("p", {}, prod.resumo));
     box.insertAdjacentHTML("beforeend", priceListHTML(prod.preco));
 
-    const infoBtn = el("button", { class: "info-btn" }, "+ Informações");
+    const infoBtn = el(
+      "a",
+      { class: "btn btn-ghost" },
+      " <ion-icon name='add-circle'></ion-icon> Informações"
+    );
     const infoArea = el(
       "div",
       { style: "display:none;margin-top:1rem" },
@@ -59,23 +81,34 @@
         infoArea.style.display === "none" ? "block" : "none";
     });
 
+    // const buyBtn = el(
+    //   "button",
+    //   { class: "buy-btn" },
+    //   prod.buyButtonText || `Comprar ${prod.nome}`
+    // );
     const buyBtn = el(
-      "button",
-      { class: "buy-btn" },
+      "a",
+      { class: "btn btn-accent" },
       prod.buyButtonText || `Comprar ${prod.nome}`
     );
     buyBtn.addEventListener("click", () => abrirModal(prod));
 
-    box.appendChild(infoBtn);
+    const btnCta = el("div", { class: "btn-cta" });
+    btnCta.appendChild(buyBtn);
+    btnCta.appendChild(infoBtn);
+
+    box.appendChild(btnCta);
     box.appendChild(infoArea);
-    box.appendChild(buyBtn);
+
     return box;
   }
 
   /* Seção do produto */
   function sectionProduto(prod) {
-    const sec = el("section", { class: "produto-section" });
-    sec.appendChild(el("h3", {}, prod.nome));
+    const sec = el("section", {
+      class: "produto-section",
+    });
+    sec.appendChild(el("h3", { class: "card-title" }, prod.nome));
     sec.appendChild(buildGallery(prod));
     sec.appendChild(buildDescBox(prod));
     return sec;
@@ -108,8 +141,9 @@
             <div id="frete-opcoes"></div>
           </div>
           <div class="final-actions">
-            <button type="button" class="final-btn" onclick="enviarWhatsApp()">WhatsApp</button>
-            <button type="button" class="final-btn" onclick="enviarTelegram()">Telegram</button>
+            <a type="button" class="btn btn-accent" onclick="enviarWhatsApp()"><ion-icon name="logo-whatsapp"></ion-icon> WhatsApp</a>
+            <a type="button" class="btn btn-ghost" onclick="enviarTelegram()">
+              <ion-icon name="paper-plane-outline"></ion-icon> Telegram</a>
           </div>
         </div>
       </div>
@@ -170,7 +204,7 @@
       if (opt.type === "seedPack") {
         group.innerHTML = `
           <p><strong>Selecione:</strong></p>
-          <label><input type="radio" name="seedPack" value="kit" checked> Kit 5 un — 5 000 sats</label><br>
+          <label><input type="radio" name="seedPack" value="kit" checked> Kit 5 un — 5 000 sats</label>
           <label><input type="radio" name="seedPack" value="single"> Placa avulsa — 2 000 sats</label>
           <div id="qty-box" style="display:none; margin-top:8px;">
             <p>Quantidade:</p>
@@ -221,8 +255,8 @@
 
     // Botão calcular
     const calcBtn = el(
-      "button",
-      { type: "button", class: "final-btn", style: "width:100%" },
+      "a",
+      { type: "button", class: "btn btn-accent", style: "width:100%" },
       "Calcular Frete"
     );
     calcBtn.addEventListener("click", calcularFrete);

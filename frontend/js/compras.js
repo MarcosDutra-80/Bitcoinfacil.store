@@ -70,6 +70,10 @@
     return data;
   }
 
+  function sanitize(val) {
+    return (val || "").toString().trim();
+  }
+
   function pickField(obj, hint) {
     for (const k in obj) if (k.toLowerCase().includes(hint)) return obj[k];
     return "";
@@ -241,6 +245,8 @@
         subtotalSatsOrig += Number(it.amount);
         subtotalReaisOrig += await satsParaReais(Number(it.amount));
       }
+
+      subtotalReaisOrig;
     }
 
     // frete
@@ -255,8 +261,11 @@
     }
 
     // totais finais
-    const produtosComTaxaBRL = subtotalReaisOrig * (1 + TAXA_FIAT); // produto + 21%
-    const totalBRL = produtosComTaxaBRL + freteReais;
+
+    //const produtosComTaxaBRL = subtotalReaisOrig * (1 + TAXA_FIAT); // produto + 21%
+
+    const totalTaxa = subtotalReaisOrig * TAXA_FIAT;
+    const totalBRL = (subtotalReaisOrig + totalTaxa + freteReais).toFixed(2);
     const totalSats = subtotalSatsOrig + freteSats;
 
     // Monta mensagem
@@ -268,9 +277,7 @@
       msg += `• ${l}\n`;
     });
 
-    msg += `\n*Subtotal Produtos:* R$ ${formatBRL(
-      subtotalReaisOrig
-    )} + 21% de acréscimo • ${formatSats(subtotalSatsOrig)} sats \n`;
+    msg += `\n*Subtotal Produtos:* R$ ${formatBRL(subtotalReaisOrig)}\n`;
 
     const servicoFrete =
       frete && frete.servico ? frete.servico : (frete && frete.tipo) || "";
@@ -285,17 +292,26 @@
           ? `${fretePrazo} dia útil`
           : `${fretePrazo} dias úteis`;
     }
-    msg += `*Prazo:* ${prazoStr} (Após Envio)\n\n`;
+    msg += `*Prazo:* ${prazoStr} (Após Envio)\n`;
 
-    msg += `*TOTAL:* R$ ${formatBRL(totalBRL)} • ${formatSats(
+    // msg += `*TOTAL:* R$ ${formatBRL(totalBRL)} ou ${formatSats(
+    //   totalSats
+    // )} sats\n\n`;
+
+    msg += `*TOTAL:* ${formatSats(
       totalSats
-    )} sats \n\n`;
+    )} sats (R$ ${subtotalReaisOrig.toFixed(2)}) ou R$ ${totalBRL} (Fiat) \n\n`;
 
-    const cepRaw = pickField(d, "cep") || d.cep || "";
+    const cupom = sanitize(pickField(d, "cupom"));
+    msg += cupom ? `*CUPOM:* ${cupom}\n` : "";
+
+    const cepRaw = sanitize(pickField(d, "cep")) || d.cep || "";
     const cepFmt = window.formatarCep
       ? window.formatarCep(cepRaw)
       : formatCepRaw(cepRaw);
     msg += `*CEP:* ${cepFmt}`;
+
+    console.log(cepFmt);
 
     return { error: "", msg };
   }

@@ -49,7 +49,7 @@ app.post("/api/frete", async (req, res) => {
     });
 
     const data = await response.json();
-    //console.log("Resposta da API SuperFrete:", data);
+    console.log("Resposta da API SuperFrete:", data);
 
     if (!response.ok) {
       console.error("Erro da API SuperFrete:", data);
@@ -90,7 +90,7 @@ function processarResposta(data) {
       nome: item.name,
       valor: parseFloat(item.price),
       prazo: parseInt(item.delivery_time),
-      servico: item.id === 1 ? "PAC" : item.id === 2 ? "SEDEX" : item.name,
+      servico: item.name,
     }))
     .sort((a, b) => a.valor - b.valor);
 

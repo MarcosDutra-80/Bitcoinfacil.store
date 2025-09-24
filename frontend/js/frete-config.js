@@ -24,9 +24,9 @@ window.FreteAPI = {
   async calcularFrete(cepDestino, dadosProduto) {
     try {
       const body = {
-        from: { postal_code: "31575430" }, //alterar cep
+        from: { postal_code: "33250399" }, // cep
         to: { postal_code: cepDestino.replace(/\D/g, "") },
-        services: "1,2",
+        services: "1,2,3",
         options: {
           own_hand: false,
           receipt: false,
@@ -35,10 +35,11 @@ window.FreteAPI = {
         },
         products: [dadosProduto],
       };
+
       const backendUrl =
         window.location.hostname === "localhost"
           ? "http://localhost:3000"
-          : "https://bitcoinfacil-store.onrender.com"; //URL DO DOMINIO
+          : "https://store.bitcoinfacil.net/"; //URL DO DOMINIO
       const response = await fetch(`${backendUrl}/api/frete`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
